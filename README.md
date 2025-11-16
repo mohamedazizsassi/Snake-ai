@@ -88,15 +88,6 @@ function astar(start, goal, obstacles, grid_size):
   return None
 ```
 
-Pseudocode modèle entraîné (`ImpossibleAI`) — inférence
-
-```
-state = extract_state(snake, snakes, food, grid)
-tensor = preprocess(state)
-q_values = model(tensor)
-action = argmax(q_values)
-return map_action_to_direction(action)
-```
 
 ---
 
@@ -107,8 +98,7 @@ return map_action_to_direction(action)
 - Loop de jeu avec Pygame (`main.py`, `game/engine.py`)
 - Menu principal (`game/menu.py`)
 - `Snake`, `Food` (gestion du grid, wrapping), collision & scoring
-- `game/ai/` : `EasyAI`, `MediumAI` (BFS mentor), `HardAI` (A*), `ImpossibleAI` (placeholder + inference)
-- `snake_env.py` et `train_impossible.py` — bases pour entraînement RL
+- `game/ai/` : `EasyAI`, `MediumAI` (BFS mentor), `HardAI` (A*)
 - Écran Game Over avec bouton retour au menu
 
 4.2 Fonctionnalités restantes / roadmap
@@ -122,7 +112,6 @@ return map_action_to_direction(action)
 
 - Semaine 1 : Medium collision-aware + tests unitaires (2–3 jours)
 - Semaine 2 : HardAI tuning + heuristiques (3–5 jours)
-- Semaine 3–4 : Pipeline DQN et runs d'entraînement initiaux (1–2 semaines)
 
 4.4 Risques & solutions
 
