@@ -214,15 +214,6 @@ python main.py
 
 ## Screenshots
 
-Ajoutez des captures d'écran dans le dossier `docs/screenshots/`. Les images référencées ci-dessous sont attendues par le README :
-
-- `docs/screenshots/gameplay_easy.png` — partie avec l'IA `Easy`
-- `docs/screenshots/gameplay_medium.png` — partie avec l'IA `Medium`
-- `docs/screenshots/gameplay_hard.png` — partie avec l'IA `Hard`
-- `docs/screenshots/menu.png` — écran du menu principal
-
-Exemples d'insertion d'images (affichées si les fichiers existent) :
-
 ![Menu](docs/screenshots/menu.png)
 
 ![Gameplay — Easy](docs/screenshots/gameplay_easy.png)
@@ -231,99 +222,7 @@ Exemples d'insertion d'images (affichées si les fichiers existent) :
 
 ![Gameplay — Hard](docs/screenshots/gameplay_hard.png)
 
-Si vous n'avez pas encore les images, vous pouvez les générer localement (Pygame nécessite un affichage) en utilisant le script helper :
 
-```powershell
-python scripts/capture_screenshots.py docs/screenshots gameplay_easy
-python scripts/capture_screenshots.py docs/screenshots gameplay_medium
-python scripts/capture_screenshots.py docs/screenshots gameplay_hard
-python scripts/capture_screenshots.py docs/screenshots menu
-```
-
-Ensuite, ajoutez les images au dépôt :
-
-```powershell
-git add docs/screenshots/*.png
-git commit -m "Add gameplay screenshots"
-git push
-```
-
----
-
-Merci — pour toute aide supplémentaire (génération d'un `requirements.txt`, tuning d'IA, ou ajout d'un pipeline d'entraînement), dites-moi ce que vous voulez prioriser.
-
-    open_set = priority queue with start
-    g_score[start] = 0
-    f_score[start] = heuristic(start, goal)
-    while open_set not empty:
-      current = pop lowest f_score
-      if current == goal: return reconstruct_path(parent, current)
-      for neighbor in neighbors:
-        if neighbor in obstacles: continue
-        tentative_g = g_score[current] + 1
-        if tentative_g < g_score[neighbor]: update parent/g/f and push
-    return None
-  ```
-
-
-  ## 4) Plan de développement (livrable)
-
-  4.1 Fonctionnalités livrées (prototype actuel)
-
-  - Loop de jeu avec Pygame (`main.py`, `game/engine.py`)
-  - Menu principal (`game/menu.py`)
-  - `Snake`, `Food` (gestion du grid, wrapping), collision & scoring
-  - `game/ai/` : `EasyAI`, `MediumAI` (BFS mentor), `HardAI` (A*)
-  - Écran Game Over avec bouton retour au menu
-
-  4.2 Fonctionnalités restantes / roadmap
-
-  - Integration de reinforcement learning
-  - Ajout des obstacles
-  - Amélioration d'`HardAI` : éviter impasses, heuristique plus riche
-  - Metrics & logging : courbes d'apprentissage, moyenne de score, export CSV
-  - UI : scoreboard, paramètres (vitesse, nb IA)
-
-  4.3 Planning proposé (exemples)
-
-  - Semaine 1 : Medium collision-aware + tests unitaires (2–3 jours)
-  - Semaine 2 : HardAI tuning + heuristiques (3–5 jours)
-
-  4.4 Risques & solutions
-
-  - Entraînement long et non déterministe → solution : checkpoints, runs parallèles, monitoring (TensorBoard / CSV)
-  - Collisions fréquentes en Multi-agent → prévoir règles de priorité / respawn et métriques de robustesse
-
-  ---
-
-  ## 5) Instructions rapides d’exécution
-
-  Pré-requis : Python 3.x, pip. Exemple d'installation minimale :
-
-  ```powershell
-  pip install pygame numpy
-  # Pour ML si besoin :
-  pip install torch tqdm
-  ```
-
-  Pour lancer le jeu :
-
-  ```powershell
-  python main.py
-  ```
-
-  ---
-
-  ## Screenshots
-
-
-  ![Menu](docs/screenshots/menu.png)
-
-  ![Gameplay — Easy](docs/screenshots/gameplay_easy.png)
-
-  ![Gameplay — Medium](docs/screenshots/gameplay_medium.png)
-
-  ![Gameplay — Hard](docs/screenshots/gameplay_hard.png)
 
  
 
