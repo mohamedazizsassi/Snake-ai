@@ -170,7 +170,6 @@ function astar(start, goal, obstacles, grid_size):
     return None
   ```
 
-  ---
 
   ## 4) Plan de développement (livrable)
 
