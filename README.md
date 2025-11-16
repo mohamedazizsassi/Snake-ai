@@ -222,14 +222,6 @@ function astar(start, goal, obstacles, grid_size):
 
   ## Screenshots
 
-  Ajoutez des captures d'écran dans le dossier `docs/screenshots/`. Les images référencées ci-dessous sont attendues par le README :
-
-  - `docs/screenshots/gameplay_easy.png` — partie avec l'IA `Easy`
-  - `docs/screenshots/gameplay_medium.png` — partie avec l'IA `Medium`
-  - `docs/screenshots/gameplay_hard.png` — partie avec l'IA `Hard`
-  - `docs/screenshots/menu.png` — écran du menu principal
-
-  Exemples d'insertion d'images (affichées si les fichiers existent) :
 
   ![Menu](docs/screenshots/menu.png)
 
@@ -239,28 +231,5 @@ function astar(start, goal, obstacles, grid_size):
 
   ![Gameplay — Hard](docs/screenshots/gameplay_hard.png)
 
-  Si vous n'avez pas encore les images, vous pouvez les générer localement (Pygame nécessite un affichage) en utilisant le script helper :
-
-  ```powershell
-  python scripts/capture_screenshots.py docs/screenshots gameplay_easy
-  python scripts/capture_screenshots.py docs/screenshots gameplay_medium
-  python scripts/capture_screenshots.py docs/screenshots gameplay_hard
-  python scripts/capture_screenshots.py docs/screenshots menu
-  ```
-
-  Ensuite, ajoutez les images au dépôt :
-
-  ```powershell
-  git add docs/screenshots/*.png
-  git commit -m "Add gameplay screenshots"
-  git push
-  ```
-
-  ---
-
-  Merci — pour toute aide supplémentaire (génération d'un `requirements.txt`, tuning d'IA, ou ajout d'un pipeline d'entraînement), dites-moi ce que vous voulez prioriser.
-
-  """
-
-
+ 
 
